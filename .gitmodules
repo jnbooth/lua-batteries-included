@@ -1,0 +1,18 @@
+[submodule "base64"]
+	path = base64
+	url = https://github.com/aklomp/base64.git
+[submodule "lbc"]
+	path = lbc
+	url = https://github.com/jnbooth/lbc-101.git
+[submodule "lpeg"]
+	path = lpeg
+	url = https://github.com/roberto-ieru/LPeg.git
+[submodule "lrexlib"]
+	path = lrexlib
+	url = https://github.com/rrthomas/lrexlib.git
+[submodule "lua"]
+	path = lua
+	url = https://github.com/walterschell/Lua.git
+[submodule "pcre2"]
+	path = pcre2
+	url = https://github.com/PCRE2Project/pcre2.git
