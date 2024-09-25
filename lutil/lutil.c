@@ -5,12 +5,12 @@
 
 int optint(lua_State *L, int idx, int ifNil)
 {
-  int actualType = lua_type(L, idx);
+  const int actualType = lua_type(L, idx);
   if (actualType <= 0)
     return ifNil;
   luaL_argexpected(L, actualType == LUA_TNUMBER, idx, "integer");
   int isInt;
-  int result = lua_tointegerx(L, idx, &isInt);
+  const int result = lua_tointegerx(L, idx, &isInt);
   luaL_argexpected(L, isInt, idx, "integer");
   return result;
 }
@@ -52,12 +52,12 @@ static int L_split(lua_State *L)
     luaL_error(L, "Count must be positive or zero");
 
   lua_newtable(L);
-  int max = count == 0 ? INT_MAX : count;
+  const int max = count == 0 ? INT_MAX : count;
 
   const char *endPtr = input + inputLength;
   const char *sepPtr;
   int i = 1;
-  for (; i <= max && input < endPtr && (sepPtr = strchr(input, *sep)) != NULL; i += 1)
+  for (; i <= max && input < endPtr && (sepPtr = strchr(input, *sep)) != NULL; ++i)
   {
     lua_pushlstring(L, input, sepPtr - input);
     lua_rawseti(L, -2, i);
@@ -78,8 +78,10 @@ static const struct luaL_Reg utillib[] =
 
      {NULL, NULL}};
 
-LUALIB_API void luaopen_util(lua_State *L)
+LUALIB_API int luaopen_util(lua_State *L)
 {
   luaL_newlib(L, utillib);
+  lua_pushvalue(L, -1);
   lua_setglobal(L, "util");
+  return 1;
 }
