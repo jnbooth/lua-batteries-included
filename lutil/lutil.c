@@ -82,6 +82,6 @@ LUALIB_API int luaopen_util(lua_State *L)
 {
   luaL_newlib(L, utillib);
   lua_pushvalue(L, -1);
-  lua_setglobal(L, "util");
+  lua_setglobal(L, "utils");
   return 1;
 }
