@@ -22,7 +22,8 @@ target_compile_definitions(lrexlib_static PRIVATE
 target_link_libraries(lrexlib_static PUBLIC lua_static pcre2-posix)
 
 add_library(lualibs
-  lutil/lutil.c
+  # lbase64
+  lbase64/lbase64.c
   # lbc
   lbc/lbc.c
   lbc/src/config.h
