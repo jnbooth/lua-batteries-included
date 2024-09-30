@@ -40,6 +40,13 @@ add_library(lualibs
   lsqlite3/sqlite3.h lsqlite3/sqlite3.c
   # LuaBitOp
   LuaBitOp/bit.c
+  # lua-cjson
+  lua-cjson/dtoa_config.h
+  lua-cjson/dtoa.c
+  lua-cjson/fpconv.h lua-cjson/fpconv.c
+  lua-cjson/g_fmt.c
+  lua-cjson/lua_cjson.c
+  lua-cjson/strbuf.h lua-cjson/strbuf.c
 )
 
 target_include_directories(lualibs PRIVATE lbc/src)
