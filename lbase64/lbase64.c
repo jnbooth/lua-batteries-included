@@ -36,7 +36,5 @@ static const struct luaL_Reg base64lib[] =
 LUALIB_API int luaopen_base64(lua_State *L)
 {
   luaL_newlib(L, base64lib);
-  lua_pushvalue(L, -1);
-  lua_setglobal(L, "base64");
   return 1;
 }
