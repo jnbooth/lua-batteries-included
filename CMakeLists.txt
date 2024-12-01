@@ -55,4 +55,4 @@ target_include_directories(lualibs PRIVATE lbc/src)
 target_link_libraries(lualibs PUBLIC lua_static lrexlib_static)
 target_link_libraries(lualibs PRIVATE base64)
 
-install(FILES lsqlite3/sqlite3.h TYPE INCLUDE)
+install(DIRECTORY lsqlite3/ TYPE INCLUDE)
