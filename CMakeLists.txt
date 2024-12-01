@@ -51,6 +51,7 @@ add_library(lualibs
 )
 
 target_include_directories(lualibs PRIVATE lbc/src)
+target_include_directories(lualibs PUBLIC lsqlite3)
 
 target_link_libraries(lualibs PUBLIC lua_static lrexlib_static)
 target_link_libraries(lualibs PRIVATE base64)
