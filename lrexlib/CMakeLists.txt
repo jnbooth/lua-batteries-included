@@ -12,6 +12,8 @@ add_library(lrexlib
   lrexlib/src/pcre2/lpcre2_f.c
 )
 
+add_subdirectory(pcre2)
+
 target_include_directories(lrexlib PRIVATE pcre2/src)
 target_compile_definitions(lrexlib PRIVATE
   PCRE2_CODE_UNIT_WIDTH=8
