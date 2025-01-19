@@ -22,7 +22,7 @@ target_link_libraries(lsqlite3 PRIVATE lua_static)
 target_link_libraries(luabitop PRIVATE lua_static)
 target_link_libraries(lua-cjson PRIVATE lua_static)
 
-add_library(lualibs)
+add_library(lualibs INTERFACE)
 
 target_link_libraries(lualibs
   PUBLIC
