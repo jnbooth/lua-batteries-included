@@ -25,7 +25,7 @@ target_link_libraries(lua-cjson PRIVATE lua_static)
 add_library(lualibs INTERFACE)
 
 target_link_libraries(lualibs
-  PUBLIC
+  INTERFACE
   lua_static
   lbase64
   lbc
@@ -35,17 +35,5 @@ target_link_libraries(lualibs
   luabitop
   lua-cjson
 )
-
-if (MSVC)
-  target_compile_options(
-    lrexlib_static
-    PUBLIC
-    /wd4267
-    /wd4244
-    /wd4005
-    /wd4996
-    /wd4311
-  )
-endif ()
 
 install(DIRECTORY lsqlite3/include TYPE INCLUDE)
