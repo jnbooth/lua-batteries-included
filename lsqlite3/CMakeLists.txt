@@ -16,5 +16,4 @@ if (MSVC)
   )
 endif ()
 
-set_target_properties(lsqlite3 PROPERTIES PUBLIC_HEADER sqlite3.h)
-install(TARGETS lsqlite3 PUBLIC_HEADER)
+install(FILES sqlite3.h TYPE INCLUDE)
