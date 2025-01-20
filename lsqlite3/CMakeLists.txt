@@ -4,10 +4,8 @@ project(lsqlite3 LANGUAGES C VERSION 0.1.0)
 
 add_library(lsqlite3
   lsqlite3.c
-  include/sqlite3.h sqlite3.c
+  sqlite3.h sqlite3.c
 )
-
-include_directories(include)
 
 if (MSVC)
   target_compile_options(
@@ -18,4 +16,5 @@ if (MSVC)
   )
 endif ()
 
-install(DIRECTORY include TYPE INCLUDE)
+set_target_properties(lsqlite3 PROPERTIES PUBLIC_HEADER sqlite3.h)
+install(TARGETS lsqlite3 PUBLIC_HEADER)
