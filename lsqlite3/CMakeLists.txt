@@ -2,10 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 
 project(lsqlite3 LANGUAGES C VERSION 0.1.0)
 
-add_library(lsqlite3
-  lsqlite3.c
-  sqlite3.h sqlite3.c
-)
+add_library(lsqlite3)
 
 target_sources(lsqlite3
   PRIVATE
