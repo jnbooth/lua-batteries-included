@@ -23,13 +23,6 @@ endif()
 if(MSVC)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
   add_definitions(-Dinline=__inline)
-  add_definitions(-Dsnprintf=_snprintf)
+  #add_definitions(-Dsnprintf=_snprintf)
   add_definitions(-Dstrncasecmp=_strnicmp)
-  target_compile_options(
-    lua-cjson
-    PUBLIC
-    /wd1189
-    /wd4005
-  )
-
 endif()
