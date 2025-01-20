@@ -17,3 +17,5 @@ if (MSVC)
     /wd4996
   )
 endif ()
+
+install(DIRECTORY include TYPE INCLUDE)
