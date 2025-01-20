@@ -24,6 +24,8 @@ target_link_libraries(lua-cjson PRIVATE lua_static)
 
 add_library(lualibs INTERFACE)
 
+include_directories(lsqlite3/include)
+
 target_link_libraries(lualibs
   INTERFACE
   lua_static
