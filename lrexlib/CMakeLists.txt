@@ -25,10 +25,10 @@ if (MSVC)
   target_compile_options(
     lrexlib
     PUBLIC
-    /wd4267
-    /wd4244
     /wd4005
-    /wd4996
+    /wd4244
+    /wd4267
     /wd4311
+    /wd4996
   )
 endif ()

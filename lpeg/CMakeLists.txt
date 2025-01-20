@@ -11,3 +11,12 @@ add_library(lpeg
   lpeg/lptypes.h
   lpeg/lpvm.h lpeg/lpvm.c
 )
+
+if (MSVC)
+  target_compile_options(
+    lpeg
+    PUBLIC
+    /wd4244
+    /wd4267
+  )
+endif ()

@@ -8,3 +8,12 @@ add_library(lsqlite3
 )
 
 include_directories(include)
+
+if (MSVC)
+  target_compile_options(
+    lua_static
+    PUBLIC
+    /wd4244
+    /wd4996
+  )
+endif ()

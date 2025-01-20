@@ -36,4 +36,13 @@ target_link_libraries(lualibs
   lua-cjson
 )
 
+if (MSVC)
+  target_compile_options(
+    lua_static
+    PUBLIC
+    /wd4244
+    /wd4267
+  )
+endif ()
+
 install(DIRECTORY lsqlite3/include TYPE INCLUDE)

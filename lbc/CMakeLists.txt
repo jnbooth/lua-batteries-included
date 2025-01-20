@@ -9,3 +9,11 @@ add_library(lbc
 )
 
 target_include_directories(lbc PRIVATE lbc/src)
+
+if (MSVC)
+  target_compile_options(
+    lbc
+    PUBLIC
+    /wd4005
+  )
+endif ()

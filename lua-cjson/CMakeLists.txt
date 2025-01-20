@@ -12,17 +12,24 @@ add_library(lua-cjson
 include(CheckSymbolExists)
 CHECK_SYMBOL_EXISTS(isinf math.h HAVE_ISINF)
 if(NOT HAVE_ISINF)
-    add_definitions(-DUSE_INTERNAL_ISINF)
+  add_definitions(-DUSE_INTERNAL_ISINF)
 endif()
 
 if(WIN32)
-    # Windows sprintf()/strtod() handle NaN/inf differently. Not supported.
-    add_definitions(-DDISABLE_INVALID_NUMBERS)
+  # Windows sprintf()/strtod() handle NaN/inf differently. Not supported.
+  add_definitions(-DDISABLE_INVALID_NUMBERS)
 endif()
 
 if(MSVC)
-    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-    add_definitions(-Dinline=__inline)
-    add_definitions(-Dsnprintf=_snprintf)
-    add_definitions(-Dstrncasecmp=_strnicmp)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+  add_definitions(-Dinline=__inline)
+  add_definitions(-Dsnprintf=_snprintf)
+  add_definitions(-Dstrncasecmp=_strnicmp)
+  target_compile_options(
+    lua-cjson
+    PUBLIC
+    /wd1189
+    /wd4005
+  )
+
 endif()
