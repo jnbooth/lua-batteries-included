@@ -7,6 +7,20 @@ add_library(lsqlite3
   sqlite3.h sqlite3.c
 )
 
+target_sources(lsqlite3
+  PRIVATE
+    lsqlite3.c
+    sqlite3.c
+
+  PUBLIC
+  FILE_SET HEADERS
+  BASE_DIRS include
+  FILES
+    include/sqlite3.h
+)
+
+target_include_directories(lsqlite3 PUBLIC FILE_SET INTERFACE_HEADERS)
+
 if (MSVC)
   target_compile_options(
     lua_static
@@ -15,5 +29,3 @@ if (MSVC)
     /wd4996
   )
 endif ()
-
-install(FILES sqlite3.h TYPE INCLUDE)

@@ -45,4 +45,3 @@ if (MSVC)
   )
 endif ()
 
-install(FILES lsqlite3/sqlite3.h TYPE INCLUDE)
