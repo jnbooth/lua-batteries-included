@@ -44,3 +44,5 @@ if (MSVC)
     /wd4267
   )
 endif ()
+
+install(FILES lsqlite3/sqlite3.h TYPE INCLUDE)
